@@ -519,7 +519,7 @@ header {
 }
 
 .subscr-input:focus {
-  border: 2px solid rgba(33, 150, 243, 1);
+  border: 1px solid rgba(33, 150, 243, 1);
 }
 
 .subscr-btn {
@@ -623,11 +623,18 @@ header {
   cursor: pointer;
 }
 
+.close-btn:hover .close-icon,
+.close-btn:focus .close-icon {
+  fill: var(--acent-color);
+}
+
 .close-icon {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ----------- */
@@ -635,8 +642,10 @@ header {
 /* ----------- */
 
 .contact-form {
+  position: relative;
+
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
 
   margin-right: 40px;
   margin-bottom: 10px;
@@ -655,10 +664,33 @@ header {
 }
 
 .contact-form-input {
-  padding: 12px;
+  padding: 12px 12px 12px 42px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   outline-style: none;
+
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-form-input:focus,
+.comment-field:focus {
+  border: 1px solid var(--acent-color);
+}
+
+.contact-form-input:focus ~ .form-icon,
+.comment-field:focus ~ .form-icon {
+  fill: var(--acent-color);
+}
+
+.form-icon {
+  position: absolute;
+
+  top: 50%;
+  left: 12px;
+
+  fill: currentColor;
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .comment-field {
@@ -666,6 +698,9 @@ header {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   resize: none;
+  outline-style: none;
+
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .comment-field::placeholder {
@@ -685,11 +720,43 @@ header {
 }
 
 .checkbox-label {
+  display: inline-block;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.71;
 
   color: var(--secondary-text-color);
+}
+
+.checkbox-icon {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border: 2px solid #000000;
+  border-radius: 20%;
+  margin-right: 7px;
+}
+
+.checkbox-input:checked + .checkbox-icon {
+  background-color: var(--acent-color);
+  border-color: var(--acent-color);
+  background-image: url(../images/icon_check.svg);
+  background-position: center;
+  /* background-size: contain; */
+  background-origin: border-box;
+}
+
+.checkbox-input {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
 }
 
 .policy-link {
