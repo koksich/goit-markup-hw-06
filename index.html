@@ -395,9 +395,8 @@
 				</address>
 			</div>
 
-
 			<div class="join">
-				<h3 class="join-title">приєднуйтесь</h3>
+				<h3 class="footer-titles">приєднуйтесь</h3>
 				<ul class="join-list list">
 					<li class="join-item">
 						<a href="" class="join-link link">
@@ -433,11 +432,62 @@
 
 				</ul>
 			</div>
+
+			<div class="subscribe">
+				<h3 class="footer-titles">Підпишіться на розсилку</h3>
+				<form class="subscr-field" autocomplete="off">
+					<div class="subscr-form">
+						<label class="subscr-label" for="email"></label>
+						<input class="subscr-input" type="email" name="email" id="email" placeholder="E-mail">
+					</div>
+
+					<button class="subscr-btn" type="submit">Підписатися
+						<svg class="subscr-icon" width="24px" height="24px">
+							<use href="./images/icons.svg#icon-send"></use>
+						</svg>
+					</button>
+				</form>
+			</div>
 		</div>
 	</footer>
 
 	<div class="backdrop is-hidden" data-modal>
 		<div class="modal">
+			<h2 class="modal-title">Залиште свої дані, ми вам передзвонимо</h2>
+
+			<form class="form">
+				<div class="contact-form">
+					<label class="contact-form-label" for="name">Ім'я</label>
+					<input class="contact-form-input" type="text" name="name" id="name">
+				</div>
+
+				<div class="contact-form">
+					<label class="contact-form-label" for="tel">Телефон</label>
+					<input class="contact-form-input" type="tel" name="tel" id="tel">
+				</div>
+
+				<div class="contact-form">
+					<label class="contact-form-label" for="email">Пошта</label>
+					<input class="contact-form-input" type="email" name="email" id="email">
+				</div>
+
+				<div class="contact-form">
+					<label class="contact-form-label" for="comment">Коментар</label>
+					<textarea class="comment-field" name="comment" id="comment" rows="10"
+						placeholder="Введіть текст"></textarea>
+				</div>
+
+				<div class="checkbox">
+					<input type="checkbox" name="policy" id="policy">
+					<label class="checkbox-label" for="policy">Погоджуюся з розсилкою та приймаю <a class="policy-link"
+							href="">Умови
+							договору</a> </label>
+				</div>
+
+				<button class="submit-btn" type="submit">Відправити</button>
+
+			</form>
+
 			<button data-modal-close class="close-btn">
 				<svg class="close-icon" width="11px" height="11px">
 					<use href="./images/icons.svg#icon-close-btn"> </use>
